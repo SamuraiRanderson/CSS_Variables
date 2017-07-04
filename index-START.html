@@ -81,6 +81,10 @@
 
     function handleUpdate() {
         const suffix = this.dataset.sizing || '';
+        /*
+        The "OR" is necessary to avoid appendeding 'undefined'
+        since not every input has data-sizing
+        */ 
         document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
 
